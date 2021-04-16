@@ -1,0 +1,460 @@
+<!--
+ * @Author: OriginalCoder
+ * @Date: 2020-09-25 17:34:00
+ * @version: 
+ * @LastEditTime: 2020-09-25 23:13:36
+ * @LastEditors: OriginalCoder
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</title>
+  <link rel="shortcut icon" href="../assets/bilibili-fill.png" />
+  <style type="text/css">
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    a {
+      color: black;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    /* 未被访问的链接 */
+    a:visited {
+      text-decoration: none;
+    }
+
+    /* 已被访问的链接 */
+    a:hover {
+      color: #4e6ef2;
+      text-decoration: none;
+    }
+
+    /* 鼠标指针移动到链接上 */
+    a:active {
+      text-decoration: none;
+    }
+
+    #main {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      width: 70%;
+    }
+
+    /* banner图片等比例缩小 */
+    .banner {
+      padding-bottom: 34px;
+    }
+
+    .banner,
+    .banner a,
+    .banner img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .pic {
+      height: 228px;
+      width: 280px;
+    }
+
+    .picture {
+      height: 125px;
+      width: 206px;
+    }
+
+    #mian div {
+      width: 100px;
+      height: 100px;
+    }
+
+    .all {
+      /* display: flex;
+        flex-direction: column; */
+      padding-right: 95px;
+      padding-left: 105px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .live-card {
+      color: #505050;
+      font-size: 12px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      width: 206px;
+    }
+
+    .row {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .top-content * {
+      /* 文字在图片后面居中对齐 */
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      /* left: 120px; */
+    }
+
+    .video-title {
+      font-size: 24px;
+      color: #000000;
+    }
+
+    .text-info {
+      text-align: center;
+      font-size: 12px;
+      box-sizing: border-box;
+      margin: 0;
+      padding-left: 30px;
+      color: #505050;
+      line-height: 28px;
+    }
+
+    .swap {
+      padding-left: 417px;
+    }
+
+    .btn {
+      font-size: 12px;
+      height: 28px;
+      width: 60px;
+      line-height: 6px;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+    }
+
+    .other {
+      padding-left: 15px;
+
+    }
+
+    .tab-switch {
+      color: #505050;
+      font-size: 12px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      line-height: 18px;
+      height: 22px;
+      margin-right: 20px;
+      border-bottom: 2px solid;
+      padding: 0px;
+    }
+
+    .container {
+      width: 1160px;
+      height: 520px;
+      margin: 0 auto;
+      display: flex;
+      border: 4px solid #ededed;
+      border-radius: 4px;
+    }
+
+    .icon {
+      height: 36px;
+      width: 36px;
+      padding-top: 30px;
+      padding-left: 120px;
+    }
+
+    /* 兄弟姐妹，这个公司没有年终奖，老板特别抠
+      很喜欢给大家画饼，我就是看到这个离了职
+      另外现在的这个项目很多bug，
+      及减持不了多久的，祝你好运，告辞！ */
+    .live {
+      padding-left: 30px;
+    }
+
+    .right {
+      float: right;
+      width: 320px;
+      height: 330px;
+      box-sizing: border-box;
+
+    }
+
+    .slide-pic {
+      padding-top: 10px;
+      width: 315px;
+      height: 367px;
+    }
+
+    table {
+      position: absolute;
+    }
+
+    .up {
+      font-size: 12px;
+      cursor: pointer;
+      color: #00a1d6;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      line-height: 16px;
+    }
+
+    .up-cover {
+      font-size: 12px;
+      cursor: pointer;
+      color: #212121;
+      line-height: 16px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .face {
+      position: absolute;
+      font-size: 12px;
+      color: #212121;
+      line-height: 16px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+      border-style: none;
+      width: 36px;
+      height: 36px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #f7f7f7;
+      margin-top: 20px;
+    }
+
+    .txt {
+      padding-left: 50px;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: bold;
+      /* padding-left: 50px; */
+    }
+
+    .tag {
+      font-size: 12px;
+      line-height: 16px;
+      color: #999;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 头部导航栏 -->
+  <header class="banner">
+    <img src="https://i0.hdslb.com/bfs/vc/ab61ab76a225646e3bcb162b0f8fb2aa47f1f66c.png" alt="" />
+  </header>
+  <!-- 正在直播列表 -->
+  <div class="all">
+    <div class="top-content">
+      <img style="padding-right: 15px; width: 36px; height: 36px"
+        src="https://balabala123.oss-cn-beijing.aliyuncs.com/Snipaste_2021-04-16_09-51-30.png" alt="" />
+      <span class="video-title">
+        <a style="font-size: 20px"
+          href="https://live.bilibili.com/?spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.1"
+          target="blank">正在直播</a>
+        <div class="text-info">
+          <span>当前共有26409个在线直播</span>
+        </div>
+      </span>
+      <span class="swap">
+        <button class="btn">换一换</button>
+        <button class="btn">更多</button>
+      </span>
+      <span class="other">
+        <div class="tab-switch">直播排行</div>
+        <div class="tab-switch">关注的主播</div>
+        <div class="tab-switch">为你推荐</div>
+      </span>
+    </div>
+    <table class="tab" cellspacing="10">
+      <tr>
+        <td>
+          <!-- <div style="position:relative; width:100px; height:100px"> -->
+          <img class="picture"
+            src="http://i0.hdslb.com/bfs/live/new_room_cover/6de351a2b1d3114c3c4c867aa152bff97041fd06.jpg@257w_145h_1c_100q.webp"
+            alt="" />
+          <span style="position:absolute;"></span>
+  </div>
+  <div class="up">
+    <div class="up-cover">
+      <img class="face"
+        src="http://i0.hdslb.com/bfs/face/67095d8d0ac584040837424014f72a7683953008.jpg@45w_45h_1c_100q.webp" alt="">
+      <div class="txt">
+        <a href="https://live.bilibili.com/14130096?hotRank=0" target="blank">
+          <p class="name">大家一起吹泡泡</p>
+        </a>
+        <p class="title">封面本人努力营业</p>
+        <p class="tag">视频聊天</p>
+      </div>
+    </div>
+  </div>
+  </td>
+  <td>
+    <img class="picture"
+      src="http://i0.hdslb.com/bfs/live/user_cover/70db752457f76a1a62dcb523638eb5fae5a1ee69.jpg@257w_145h_1c_100q.webp"
+      alt="" />
+    <div class="up">
+      <div class="up-cover">
+        <img class="face"
+          src="http://i2.hdslb.com/bfs/face/d1e974fe7bad3d301dcd6cd49c2375a067bda40c.jpg@45w_45h_1c_100q.webp" alt="">
+        <div class="txt">
+          <a href="https://live.bilibili.com/2603963?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.4"
+            target="blank">
+            <p class="name">是幼情呀</p>
+          </a>
+          <p class="title">【幼情】高质量 安心</p>
+          <p class="tag">放松电台</p>
+        </div>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <img class="picture"
+      src="http://i0.hdslb.com/bfs/live/user_cover/2ee8f659a362b28b753219d5791225a38d50b217.jpg@257w_145h_1c_100q.webp"
+      alt="" />
+    <div class="up">
+      <div class="up-cover">
+        <img class="face"
+          src="http://i2.hdslb.com/bfs/face/27bba54fb6bc7b6fa53eb7f9f152d49c0fd232ef.jpg@45w_45h_1c_100q.webp" alt="">
+        <div class="txt">
+          <a href="https://live.bilibili.com/22734937?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.5"
+            target="blank">
+            <p class="name">一寸先生</p>
+          </a>
+          <p class="title">【黑糖去哪了?】24小时直播间</p>
+          <p class="tag">萌宠</p>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td>
+    <img class="picture"
+      src="http://i0.hdslb.com/bfs/live/user_cover/f2bc6c56d8dc72cb83e4b15289864f0731eeeb6d.jpg@257w_145h_1c_100q.webp"
+      alt="" />
+    <div class="up">
+      <div class="up-cover">
+        <img class="face"
+          src="http://i1.hdslb.com/bfs/face/ae0db73f36cc62522c55ea6d0a5bd40ebeef4ac6.jpg@45w_45h_1c_100q.webp" alt="">
+        <div class="txt">
+          <a href="https://live.bilibili.com/3529492?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.6"
+            target="blank">
+            <p class="name">小璐Smily2xz</p>
+          </a>
+          <p class="title">上舰跟车王者可帮打巅峰赛！</p>
+          <p class="tag">王者荣耀</p>
+        </div>
+      </div>
+    </div>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <img class="picture"
+        src="http://i0.hdslb.com/bfs/live/new_room_cover/accd875b80ad9982cab621f93b716513801ea2fe.jpg@257w_145h_1c_100q.webp"
+        alt="" />
+      <div class="up">
+        <div class="up-cover">
+          <img class="face"
+            src="http://i1.hdslb.com/bfs/face/4e777ae7c23adc5f37a98a50c28f69f4fb140161.jpg@45w_45h_1c_100q.webp" alt="">
+          <div class="txt">
+            <a href="https://live.bilibili.com/22573831?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.7"
+              target="blank">
+              <p class="name">设计教学教程</p>
+            </a>
+            <p class="title">老司机教你学平面</p>
+            <p class="tag">职业技能</p>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td>
+      <img class="picture"
+        src="http://i0.hdslb.com/bfs/live/new_room_cover/c32c902a69232ac3be83ef1a14a43ec21ac10dbb.jpg@257w_145h_1c_100q.webp"
+        alt="" />
+      <div class="up">
+        <div class="up-cover">
+          <img class="face"
+            src="http://i2.hdslb.com/bfs/face/8e2904e8df8536e666d5293afeb51acb6db28560.jpg@45w_45h_1c_100q.webp" alt="">
+          <div class="txt">
+            <a href="https://live.bilibili.com/362064?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.8"
+              target="blank">
+              <p class="name">顾疚疚</p>
+            </a>
+            <p class="title">【歌回】唱歌好听进来夸</p>
+            <p class="tag">虚拟主播</p>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td>
+      <img class="picture"
+        src="http://i0.hdslb.com/bfs/live/new_room_cover/e081e77822662ec4d3b37ebb2f948946f3953856.jpg@257w_145h_1c_100q.webp"
+        alt="" />
+      <div class="up">
+        <div class="up-cover">
+          <img class="face"
+            src="http://i0.hdslb.com/bfs/face/16ecc47179f47efefcc0ae6a840572a9d80e667d.jpg@45w_45h_1c_100q.webp" alt="">
+          <div class="txt">
+            <a href="https://live.bilibili.com/10677292?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.9"
+              target="blank">
+              <p class="name">咸鱼格兰德</p>
+            </a>
+            <p class="title">舰长插队 满星深渊速通</p>
+            <p class="tag">原神</p>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td>
+      <img class="picture"
+        src="http://i0.hdslb.com/bfs/live/new_room_cover/dad314a8cfd50df868c2e17f54e036bf4688fb9a.jpg@257w_145h_1c_100q.webp"
+        alt="" />
+      <div class="up">
+        <div class="up-cover">
+          <img class="face"
+            src="http://i2.hdslb.com/bfs/face/22c59c74695bd09e77c1e15dedec43e76c5fc031.jpg@45w_45h_1c_100q.webp" alt="">
+          <div class="txt">
+            <a href="https://live.bilibili.com/21706862?hotRank=0&spm_id_from=333.851.b_62696c695f7265706f72745f6c697665.10"
+              target="blank">
+              <p class="name">七咔拉CHikalar</p>
+            </a>
+            <p class="title">【早安放送】早开半小时七宝在整理资料~</p>
+            <p class="tag">虚拟主播</p>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </table>
+  <div class="right">
+    <img class="slide-pic"
+      src="https://i0.hdslb.com/bfs/live/481f1ac31cf2a2767746118cfb403f1874fb6d82.jpg@400w_413h_1c_100q.webp" alt="">
+  </div>
+</body>
+
+</html>
