@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+// import News from './views/News.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'

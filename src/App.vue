@@ -144,10 +144,10 @@
                         <div data-v-59fd5a91 class>
                           <div class="bili-avatar">
                             <img
-                              class="bili-avatar-img bili-avatar-face bili-avatar-img-radius"
-                              data-src="https://i2.hdslb.com/bfs/face/0f6ddd9535551c69682911c0ad34f0f1dc0bad6b.jpg@96w_96h_1c.webp"
-                              alt
+                              alt=""
                               src="https://i2.hdslb.com/bfs/face/0f6ddd9535551c69682911c0ad34f0f1dc0bad6b.jpg@96w_96h_1c.webp"
+                              width="40"
+                              height="40"
                             />
                             <span class="bili-avatar-icon"></span>
                           </div>
@@ -177,7 +177,7 @@
                                     class="pic"
                                   >
                                     <img
-                                      src="//i0.hdslb.com/bfs/feed-admin/9c5dc48ca0558b721d8b12fe590772b0e2f0bcba.png"
+                                      src="http://i0.hdslb.com/bfs/feed-admin/9c5dc48ca0558b721d8b12fe590772b0e2f0bcba.png"
                                       alt="0.6元/天开超Q双会员领限量装扮"
                                       width="230"
                                       height="68"
@@ -1821,9 +1821,12 @@
       width: 100%;
       height: 100%;
       position: relative;
-      background-image: url(https://i2.hdslb.com/bfs/face/0f6ddd9535551c69682911c0ad34f0f1dc0bad6b.jpg@96w_96h_1c.webp);
+      // background-image: url(https://i2.hdslb.com/bfs/face/0f6ddd9535551c69682911c0ad34f0f1dc0bad6b.jpg@96w_96h_1c.webp);
       background-size: cover;
       border-radius: 50%;
+      img {
+        border-radius: 50%;
+      }
       .bili-avatar-img-radius {
         border-radius: 50%;
       }
@@ -2109,13 +2112,15 @@ a[data-v-6db3c9b8] {
           position: absolute;
           z-index: 2;
           width: 100%;
-          top: 64px;
+          top: 50px;
           left: 0;
           transition: top 0.2s;
           padding: 26px 10px 10px;
           .title {
             font-size: 14px;
             line-height: 18px;
+            left: 20px;
+            width: 160px;
             height: 18px;
             color: #fff;
             margin-bottom: 6px;
